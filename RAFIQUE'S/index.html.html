@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAFIQUE’S | English Learning Center</title>
+<meta name="description" content="RAFIQUE’S English Learning Center: speak, write and think in English with confidence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!--
+=====================================================================
+  HOW TO EDIT THIS WEBSITE  (search for the ★ markers in this file)
+  ★ 1. WhatsApp number ........ in the <script> at the very bottom
+  ★ 2. CEO photo .............. section "HERO", put file at images/ceo.jpg
+  ★ 3. Institution information  section "ABOUT"
+  ★ 4. Achievement images ..... section "ACHIEVEMENTS", folder images/
+  ★ 5. Courses / phone / address  sections "COURSES" and "CONTACT"
+  Folder layout:  index.html  +  images/ (ceo.jpg, achievement-1.jpg ...)
+=====================================================================
+-->
+
+<style>
+:root{
+  --ink:#140f3a;        /* deep midnight */
+  --plum:#2b1766;
+  --lagoon:#12b5b0;
+  --saffron:#ffb547;
+  --rose:#ff6b8b;
+  --mist:#f3efff;
+  --glass:rgba(255,255,255,.07);
+  --line:rgba(255,255,255,.16);
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',system-ui,sans-serif;color:var(--mist);background:var(--ink);line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.1;font-weight:700}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:3px;border-radius:8px}
+
+/* ---------- LIVING BACKGROUND: aurora + floating letters ---------- */
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;
+  background:radial-gradient(120% 90% at 15% 0%,var(--plum) 0%,var(--ink) 60%)}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:drift 22s ease-in-out infinite alternate}
+.orb.a{width:46vmax;height:46vmax;background:var(--lagoon);left:-12vmax;top:30vh}
+.orb.b{width:40vmax;height:40vmax;background:var(--rose);right:-10vmax;top:-8vmax;animation-duration:28s}
+.orb.c{width:30vmax;height:30vmax;background:var(--saffron);right:12vw;bottom:-14vmax;opacity:.35;animation-duration:34s}
+@keyframes drift{to{transform:translate(8vmax,-6vmax) scale(1.18)}}
+.letters{position:absolute;inset:0;font-family:'Fraunces',serif;font-style:italic;color:rgba(255,255,255,.05);user-select:none}
+.letters span{position:absolute;font-size:clamp(5rem,14vw,13rem);animation:float 18s ease-in-out infinite alternate}
+@keyframes float{to{transform:translateY(-40px) rotate(6deg)}}
+.grain{position:absolute;inset:0;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- layout ---------- */
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+section{padding:clamp(4rem,9vw,7rem) 0}
+.sec-title{font-size:clamp(2rem,4.4vw,3.2rem);margin-bottom:.8rem}
+.sec-sub{max-width:56ch;color:rgba(243,239,255,.78);margin-bottom:2.5rem}
+
+/* nav */
+header{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(20,15,58,.55);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
+.logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.45rem;text-decoration:none;letter-spacing:.01em}
+.logo i{color:var(--saffron);font-style:normal}
+nav ul{display:flex;gap:1.6rem;list-style:none}
+nav ul a{text-decoration:none;font-weight:500;opacity:.85;transition:opacity .2s}
+nav ul a:hover{opacity:1;color:var(--saffron)}
+@media(max-width:720px){nav ul{display:none}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.6rem;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid transparent;transition:transform .2s,box-shadow .2s}
+.btn.primary{background:linear-gradient(135deg,var(--saffron),#ff8a47);color:#2a1500;box-shadow:0 10px 30px -10px rgba(255,160,70,.7)}
+.btn.ghost{border-color:var(--line);background:var(--glass)}
+.btn:hover{transform:translateY(-3px)}
+
+/* ---------- HERO ---------- */
+.hero{padding-top:clamp(3rem,7vw,5.5rem)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.4vw,5rem);margin-bottom:1.3rem}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--saffron)}
+.hero p{max-width:50ch;font-size:1.12rem;color:rgba(243,239,255,.85);margin-bottom:2rem}
+.cta{display:flex;flex-wrap:wrap;gap:1rem}
+.facts{display:flex;gap:2.2rem;margin-top:2.6rem;flex-wrap:wrap}
+.facts b{font-family:'Fraunces',serif;font-size:1.9rem;display:block;color:var(--lagoon)}
+.facts span{font-size:.92rem;opacity:.8}
+
+/* ★ 2. CEO PORTRAIT FRAME  (arch shape + glowing ring) */
+.ceo{position:relative;justify-self:center;width:min(100%,380px)}
+.ceo::before{content:"";position:absolute;inset:-18px;border-radius:200px 200px 28px 28px;
+  background:conic-gradient(from 0deg,var(--saffron),var(--rose),var(--lagoon),var(--saffron));
+  filter:blur(22px);opacity:.55;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ceo-frame{position:relative;aspect-ratio:3/4;border-radius:190px 190px 24px 24px;overflow:hidden;
+  border:2px solid rgba(255,255,255,.35);background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.04));
+  display:grid;place-items:center;text-align:center;padding:1.5rem}
+.ceo-frame .ph{font-size:.95rem;opacity:.8;max-width:20ch}
+.ceo-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ceo-name{position:relative;margin-top:1.3rem;text-align:center}
+.ceo-name b{font-family:'Fraunces',serif;font-size:1.3rem;display:block}
+.ceo-name span{opacity:.75;font-size:.95rem}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.ceo{order:-1;width:min(78%,320px)}}
+
+/* ---------- ABOUT ---------- */
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:28px;padding:clamp(1.5rem,4vw,2.8rem);backdrop-filter:blur(10px)}
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem}
+.about-grid p+p{margin-top:1rem}
+.values{display:grid;gap:1rem;align-content:start}
+.values div{padding:1.1rem 1.3rem;border-left:3px solid var(--lagoon);background:rgba(255,255,255,.05);border-radius:0 16px 16px 0}
+.values div:nth-child(2){border-color:var(--saffron)}
+.values div:nth-child(3){border-color:var(--rose)}
+.values b{display:block;font-family:'Fraunces',serif;font-size:1.1rem}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+
+/* ---------- COURSES ---------- */
+.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem}
+.course{padding:1.8rem;border-radius:26px;border:1px solid var(--line);background:var(--glass);transition:transform .25s,border-color .25s}
+.course:hover{transform:translateY(-6px);border-color:var(--saffron)}
+.course h3{font-size:1.45rem;margin-bottom:.5rem}
+.course p{opacity:.8;font-size:.98rem}
+.tag{display:inline-block;margin-top:1rem;padding:.25rem .8rem;border-radius:99px;background:rgba(18,181,176,.18);color:#7ff0ea;font-size:.85rem}
+
+/* ---------- ACHIEVEMENTS ---------- */
+.gallery{columns:3 260px;column-gap:1.2rem}
+.shot{break-inside:avoid;margin-bottom:1.2rem;border-radius:22px;overflow:hidden;position:relative;border:1px solid var(--line);
+  background:linear-gradient(150deg,rgba(255,255,255,.12),rgba(255,255,255,.03));min-height:200px;display:grid;place-items:center}
+.shot.tall{min-height:320px}
+.shot .ph{padding:1.4rem;text-align:center;font-size:.92rem;opacity:.75}
+.shot img{position:relative;display:block;width:100%;height:auto}
+.shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.6rem 1rem .8rem;background:linear-gradient(transparent,rgba(10,6,35,.85));font-size:.92rem}
+
+/* ---------- CONTACT ---------- */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.contact ul{list-style:none;display:grid;gap:.9rem;margin-top:1.4rem}
+.contact li{display:flex;gap:.8rem}
+.contact li b{min-width:5.5rem;color:var(--saffron);font-weight:500}
+@media(max-width:820px){.contact{grid-template-columns:1fr}}
+footer{padding:2.2rem 0 6rem;text-align:center;font-size:.92rem;opacity:.7;border-top:1px solid var(--line)}
+
+/* ---------- WHATSAPP FLOATING BUTTON ---------- */
+.wa{position:fixed;right:clamp(1rem,3vw,2rem);bottom:clamp(1rem,3vw,2rem);z-index:50;display:flex;align-items:center;gap:.8rem;text-decoration:none}
+.wa-label{background:#fff;color:#0b3d2e;padding:.65rem 1.1rem;border-radius:999px;font-weight:600;font-size:.95rem;box-shadow:0 12px 30px -8px rgba(0,0,0,.5);
+  opacity:0;transform:translateX(14px);transition:.25s;pointer-events:none;white-space:nowrap}
+.wa:hover .wa-label,.wa:focus-visible .wa-label{opacity:1;transform:none}
+.wa-icon{position:relative;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(145deg,#4ef08a,#12a150);box-shadow:0 14px 34px -6px rgba(18,161,80,.8)}
+.wa-icon::before,.wa-icon::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #4ef08a;animation:ping 2.6s ease-out infinite}
+.wa-icon::after{animation-delay:1.3s}
+@keyframes ping{from{transform:scale(1);opacity:.8}to{transform:scale(1.9);opacity:0}}
+.wa-icon svg{width:34px;height:34px;fill:#fff}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- Beautiful animated background (no image needed) -->
+<div class="bg" aria-hidden="true">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="letters">
+    <span style="left:4%;top:12%">Aa</span>
+    <span style="right:6%;top:46%;animation-delay:-6s">Bb</span>
+    <span style="left:38%;bottom:4%;animation-delay:-11s">Zz</span>
+  </div>
+  <div class="grain"></div>
+</div>
+
+<header>
+  <nav class="wrap" aria-label="Main">
+    <a class="logo" href="#top">RAFIQUE<i>’</i>S</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Learn English the way you will <em>actually</em> use it.</h1>
+      <p>At RAFIQUE’S, students practice speaking, writing, listening and reading every day, with a teacher beside them, until English feels natural.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact" data-wa>Talk to the manager</a>
+        <a class="btn ghost" href="#courses">See our courses</a>
+      </div>
+      <!-- Edit these numbers -->
+      <div class="facts">
+        <div><b>1,000+</b><span>students taught</span></div>
+        <div><b>5+</b><span>years of teaching</span></div>
+        <div><b>Band 7+</b><span>IELTS results</span></div>
+      </div>
+    </div>
+
+    <!-- ★ 2. CEO PHOTO:
+         Put the CEO picture in  images/ceo.jpg  (portrait, about 900×1200 px).
+         It replaces the placeholder automatically. Change name and title below. -->
+    <figure class="ceo">
+      <div class="ceo-frame">
+        <span class="ph">CEO photo goes here<br>(images/ceo.jpg)</span>
+        <img src="rafique.jpg" alt="Portrait of the CEO of RAFIQUE’S" onerror="this.style.display='none'">
+      </div>
+      <figcaption class="ceo-name"><b>Mr. Rafique</b><span>Founder &amp; CEO</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<!-- ★ 3. INSTITUTION INFORMATION: replace the paragraphs and the three values below -->
+<section id="about">
+  <div class="wrap">
+    <h2 class="sec-title">About RAFIQUE’S</h2>
+    <div class="glass about-grid">
+      <div>
+        <p>FOUNDED WITH A VISION TO BREAK TRADITIONAL LANGUAGE BARRIERS, RAFIQUE’S WAS ESTABLISHED TO TRANSFORM HOW ENGLISH IS LEARNED AND EXPERIENCED. WE STARTED THIS JOURNEY AFTER RECOGNIZING THAT STANDARD CLASSROOM METHODS OFTEN LEAVE STUDENTS HESITANT AND FEARFUL OF SPEAKING. WHAT MAKES OUR CLASSES TRULY DIFFERENT IS OUR SUPPORTIVE, PRACTICAL-FIRST ENVIRONMENT—WE DON'T JUST TEACH GRAMMAR RULES FROM A TEXTBOOK; WE EMPOWER YOU TO THINK, ARTICULATE, AND COMMUNICATE NATURALLY ON ANY PLATFORM.</p></p>
+      </div>
+      <div class="values">
+        <div><b>Speak from day one</b>Every class includes real conversation practice.</div>
+        <div><b>Small batches</b>Every student gets personal feedback.</div>
+        <div><b>Clear progress</b>Regular tests show exactly how you are improving.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COURSES ================= -->
+<!-- ★ 5. Edit, copy or delete any <article class="course"> block -->
+<section id="courses">
+  <div class="wrap">
+    <h2 class="sec-title">Courses</h2>
+    <p class="sec-sub">Pick the course that matches your goal. Not sure which one? Message the manager and we will guide you.</p>
+    <div class="courses">
+      <article class="course"><h3>Spoken English</h3><p>Build fluency, pronunciation and confidence through daily speaking practice.</p><span class="tag">3 months</span></article>
+      <article class="course"><h3>IELTS Preparation</h3><p>All four modules with mock tests, strategies and personal feedback.</p><span class="tag">3 months</span></article>
+      <article class="course"><h3>Computer Skills</h3><p>EVERY OFFICE SOFTWARE SKILL YOU NEED TO SUCCEED IN TODAY'S WORKPLACE.</p><span class="tag">2 months</span></article>
+      <article class="course"><h3>Kids English</h3><p>Fun, gentle lessons that help children love the language.</p><span class="tag">Ongoing</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ACHIEVEMENTS ================= -->
+<!-- ★ 4. ACHIEVEMENT IMAGES:
+     1) Copy your photos (certificates, IELTS scorecards, awards, student results) into the  images/  folder.
+     2) Name them achievement-1.jpg, achievement-2.jpg ... or just change the src below.
+     3) To add more, copy one whole <figure class="shot"> block and paste it below the last one.
+     4) Edit the <figcaption> text (student name, score, award).
+     Add class "tall" to a figure for portrait-shaped pictures. -->
+<section id="achievements">
+  <div class="wrap">
+    <h2 class="sec-title">Our achievements</h2>
+    <p class="sec-sub">Results our students and our institution are proud of.</p>
+    <div class="gallery">
+      <figure class="shot tall"><span class="ph">Achievement image 1</span><img src="achievement-1.jfif" alt="Achievement 1" loading="lazy" onerror="this.style.display='none'"><figcaption> IELTS Band 6.5</figcaption></figure>
+      <figure class="shot"><span class="ph">Achievement image 2</span><img src="achievement-2.jfif" alt="Achievement 2" loading="lazy" onerror="this.style.display='none'"><figcaption> IELTS Band 6.0</figcaption></figure>
+      <figure class="shot"><span class="ph">Achievement image 3</span><img src="achievement-3.jfif" alt="Achievement 3" loading="lazy" onerror="this.style.display='none'"><figcaption> UK VISA</figcaption></figure>
+      <figure class="shot tall"><span class="ph">Achievement image 4</span><img src="achievement-4.jpg" alt="Achievement 4" loading="lazy" onerror="this.style.display='none'"><figcaption> REMARKABLE FRIENDSHIP ACHIEVEMENT</figcaption></figure>
+      <figure class="shot"><span class="ph">Achievement image 5</span><img src="achievement-5.jpg" alt="Achievement 5" loading="lazy" onerror="this.style.display='none'"><figcaption> KID'S CLASS</figcaption></figure>
+      <figure class="shot"><span class="ph">Achievement image 6</span><img src="achievement-6.jfif" alt="Achievement 6" loading="lazy" onerror="this.style.display='none'"><figcaption> Best Student Award</figcaption></figure>
+      <!-- paste more <figure class="shot"> blocks here -->
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<!-- ★ 5. Replace phone, address and hours -->
+<section id="contact">
+  <div class="wrap">
+    <div class="glass contact">
+      <div>
+        <h2 class="sec-title">Visit or message us</h2>
+        <p>Ask about batches, fees and free demo classes. The manager replies on WhatsApp.</p>
+        <ul>
+          <li><b>Address</b><span>STATION ROAD,KULAURA</span></li>
+          <li><b>Phone</b><span>+880 1751820426</span></li>
+          <li><b>Hours</b><span>Saturday to Thursday, 9:00 am to 8:00 pm</span></li>
+        </ul>
+      </div>
+      <div style="text-align:center">
+        <a class="btn primary" href="#" data-wa style="font-size:1.1rem">Chat with the manager on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> RAFIQUE’S English Learning Center. All rights reserved.
+</div>
+ <span id="yr"></span> DEVELOPED BY: FAIJANUR RAHMAN  </div></footer>
+
+<!-- ★ 1. FLOATING WHATSAPP BUTTON (number is set in the script below) -->
+<a class="wa" href="#" data-wa target="_blank" rel="noopener" aria-label="Chat with the manager on WhatsApp">
+  <span class="wa-label">Chat with the manager</span>
+  <span class="wa-icon">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C8.84 3 3 8.8 3 15.95c0 2.28.6 4.5 1.74 6.46L3 29l6.76-1.7a13.1 13.1 0 0 0 6.28 1.6C23.2 28.9 29 23.1 29 15.95S23.2 3 16.04 3Zm0 23.7c-1.95 0-3.86-.52-5.52-1.5l-.4-.23-4.01 1.01 1.07-3.9-.26-.4a10.6 10.6 0 0 1-1.63-5.7c0-5.86 4.8-10.63 10.7-10.63 5.9 0 10.7 4.77 10.7 10.63s-4.8 10.7-10.65 10.7Zm5.86-7.97c-.32-.16-1.9-.93-2.2-1.04-.3-.1-.5-.16-.72.16-.22.32-.83 1.04-1.02 1.26-.19.22-.37.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.5.14-.66.14-.14.32-.37.48-.56.16-.19.21-.32.32-.54.1-.22.05-.4-.03-.56-.08-.16-.72-1.73-.99-2.37-.26-.62-.52-.54-.72-.55h-.62c-.22 0-.56.08-.85.4-.3.32-1.12 1.09-1.12 2.66s1.15 3.09 1.3 3.3c.16.22 2.26 3.44 5.46 4.82.76.33 1.36.52 1.82.67.77.24 1.46.2 2.01.12.61-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.14-.3-.22-.62-.38Z"/></svg>
+  </span>
+</a>
+
+<script>
+/* ★ 1. WHATSAPP SETTINGS
+   Put the manager's number with country code, digits only (no + or spaces).
+   Bangladesh example: 8801712345678  */
+const WHATSAPP_NUMBER = "8801751820426";
+const WHATSAPP_MESSAGE = "Assalamu alaikum, I want to know about the English courses at RAFIQUE’S.";
+
+const link = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
+document.querySelectorAll("[data-wa]").forEach(a => { a.href = link; a.target = "_blank"; a.rel = "noopener"; });
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
